@@ -6,3 +6,5 @@ dist
 cpp-backend/build
 cpp-backend/hms
 hospital_data.txt
+
+.vercel
