@@ -42,7 +42,7 @@ export default function Profile() {
         </div>
         <h2 className="mt-4 text-lg font-bold text-slate-100">{profile?.full_name || 'User'}</h2>
         <p className="text-sm text-slate-500 break-all">{user?.email || '—'}</p>
-        <div className="mt-3"><Badge status={role || 'guest'} /></div>
+        <div className="mt-3"><Badge status={role || '—'} /></div>
       </Card>
 
       <Card className="md:col-span-2">
@@ -78,7 +78,7 @@ export default function Profile() {
               <label className="label">Role</label>
               <div className="relative">
                 <Shield size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
-                <input className="input pl-9 opacity-60 cursor-not-allowed capitalize" value={role || 'guest'} disabled />
+                <input className="input pl-9 opacity-60 cursor-not-allowed capitalize" value={role || '—'} disabled />
               </div>
             </div>
           </div>

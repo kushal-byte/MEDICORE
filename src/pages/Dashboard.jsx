@@ -51,7 +51,7 @@ export default function Dashboard() {
         <h2 className="text-2xl font-extrabold text-slate-50">
           Hello, {profile?.full_name?.split(' ')[0] || 'there'} 👋
         </h2>
-        <p className="text-slate-400 text-sm capitalize">{role || 'guest'} overview</p>
+        <p className="text-slate-400 text-sm capitalize">{role ? `${role} overview` : 'Overview'}</p>
       </div>
 
       {err && <Card className="border-red-400/30 text-red-300 text-sm">{err}</Card>}

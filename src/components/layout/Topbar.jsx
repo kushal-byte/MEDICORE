@@ -25,7 +25,7 @@ export default function Topbar({ onMenu, title }) {
         </div>
         <div className="leading-tight">
           <p className="text-sm font-semibold text-slate-100">{profile?.full_name || 'User'}</p>
-          <p className="text-[11px] text-slate-500 capitalize">{profile?.role || 'guest'}</p>
+          <p className="text-[11px] text-slate-500 capitalize">{profile?.role || '—'}</p>
         </div>
       </div>
       <button className="btn-ghost px-2.5 py-2" onClick={out} title="Sign out"><LogOut size={18} /></button>
