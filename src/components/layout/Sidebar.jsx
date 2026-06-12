@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import {
-  LayoutDashboard, Stethoscope, Users, CalendarDays, Pill,
+  LayoutDashboard, Stethoscope, Users, CalendarDays,
   Building2, BarChart3, Settings, UserCircle, Activity,
 } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
@@ -10,7 +10,6 @@ const ALL = [
   { to: '/doctors',       label: 'Doctors',       icon: Stethoscope,     roles: ['admin','receptionist','patient'] },
   { to: '/patients',      label: 'Patients',      icon: Users,           roles: ['admin','doctor','receptionist'] },
   { to: '/appointments',  label: 'Appointments',  icon: CalendarDays,    roles: ['admin','doctor','receptionist','patient'] },
-  { to: '/prescriptions', label: 'Prescriptions', icon: Pill,            roles: ['admin','doctor','patient'] },
   { to: '/departments',   label: 'Departments',   icon: Building2,       roles: ['admin'] },
   { to: '/reports',       label: 'Reports',       icon: BarChart3,       roles: ['admin'] },
   { to: '/profile',       label: 'Profile',       icon: UserCircle,      roles: ['admin','doctor','receptionist','patient'] },

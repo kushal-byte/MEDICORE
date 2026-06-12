@@ -5,7 +5,7 @@ import Topbar from './Topbar'
 
 const TITLES = {
   '/dashboard': 'Dashboard', '/doctors': 'Doctors', '/patients': 'Patients',
-  '/appointments': 'Appointments', '/prescriptions': 'Prescriptions',
+  '/appointments': 'Appointments',
   '/departments': 'Departments', '/reports': 'Reports',
   '/settings': 'Settings', '/profile': 'Profile',
 }

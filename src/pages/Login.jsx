@@ -62,7 +62,7 @@ export function AuthShell({ title, subtitle, children }) {
             Modern hospital<br />management,<br /><span className="text-brand-400">beautifully simple.</span>
           </h2>
           <p className="text-slate-400 mt-4 max-w-md">
-            Appointments, prescriptions, analytics and role-based access — in one premium dashboard.
+            Appointments, analytics and role-based access — in one premium dashboard.
           </p>
         </div>
         <p className="text-xs text-slate-600">© {new Date().getFullYear()} MediCore Health Systems</p>

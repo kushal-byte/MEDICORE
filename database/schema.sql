@@ -1,7 +1,7 @@
 -- ============================================================
 -- MediCore Hospital Management System — PostgreSQL Schema
 -- Target: Supabase (PostgreSQL 15+)
--- Run order: schema.sql -> rls_policies.sql -> sample_data.sql
+-- Run order: schema.sql -> rls_policies.sql
 -- ============================================================
 
 -- Roles enum

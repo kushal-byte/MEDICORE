@@ -10,7 +10,6 @@ import Dashboard from './pages/Dashboard'
 import Doctors from './pages/Doctors'
 import Patients from './pages/Patients'
 import Appointments from './pages/Appointments'
-import Prescriptions from './pages/Prescriptions'
 import Departments from './pages/Departments'
 import Reports from './pages/Reports'
 import Profile from './pages/Profile'
@@ -32,7 +31,6 @@ export default function App() {
         <Route path="/doctors"       element={<Doctors />} />
         <Route path="/patients"      element={<ProtectedRoute allow={['admin','doctor','receptionist']}><Patients /></ProtectedRoute>} />
         <Route path="/appointments"  element={<Appointments />} />
-        <Route path="/prescriptions" element={<Prescriptions />} />
         <Route path="/departments"   element={<ProtectedRoute allow={['admin']}><Departments /></ProtectedRoute>} />
         <Route path="/reports"       element={<ProtectedRoute allow={['admin']}><Reports /></ProtectedRoute>} />
         <Route path="/profile"       element={<Profile />} />

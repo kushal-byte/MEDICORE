@@ -2,7 +2,7 @@
 
 A modern, production-ready **Hospital Management System** built as a startup-grade SaaS dashboard.
 Role-based access for **Admin, Doctor, Receptionist, Patient**, with analytics, appointments,
-prescriptions (PDF export), payments, and a fully separate **C++ OOP backend** for offline record processing.
+payments, and a fully separate **C++ OOP backend** for offline record processing.
 
 > React 19 · Vite · Tailwind · React Router · Recharts · React Hook Form · Lucide · Supabase (Postgres + Auth + RLS) · C++17
 
@@ -12,12 +12,12 @@ prescriptions (PDF export), payments, and a fully separate **C++ OOP backend** f
 
 - **Auth** — login, signup, forgot-password, role-based routing
 - **Admin** — dashboard analytics, manage doctors / patients / appointments / departments, reports
-- **Doctor** — view appointments & patient history, add prescriptions, update records
+- **Doctor** — view appointments & patient history, update records
 - **Receptionist** — register patients, book appointments, manage schedules, search records
-- **Patient** — book & view appointments, view prescriptions and doctor info
+- **Patient** — book & view appointments and doctor info
 - **Dashboard cards** — total patients, doctors, appointments, today's appointments, revenue
 - **Charts** — monthly patients, appointment trends, department statistics
-- **Extras** — search & filtering, pagination, CSV export, **PDF prescriptions**, notifications,
+- **Extras** — search & filtering, pagination, CSV export, notifications,
   dark mode, loading states, error handling, toast messages
 - **Premium UI** — black / navy / glassmorphism, fully responsive (mobile, tablet, desktop)
 
@@ -29,8 +29,7 @@ prescriptions (PDF export), payments, and a fully separate **C++ OOP backend** f
 hms/
 ├── database/                 # Supabase SQL (run in this order)
 │   ├── schema.sql            # tables, enums, PK/FK, constraints, indexes, triggers
-│   ├── rls_policies.sql      # Row Level Security policies
-│   └── sample_data.sql       # seed data
+│   └── rls_policies.sql      # Row Level Security policies
 ├── cpp-backend/              # standalone C++ OOP module
 │   ├── person.*  doctor.*  patient.*
 │   ├── appointment.*  prescription.*  hospital.*
@@ -72,8 +71,7 @@ npm run build
 npm run preview
 ```
 
-> The app **runs without Supabase** too — you'll see the UI with empty/error states.
-> Add credentials to unlock auth and live data.
+> Add credentials to unlock auth and live Supabase data.
 
 ---
 
@@ -83,15 +81,9 @@ npm run preview
 2. Open **SQL Editor** and run the scripts **in order**:
    1. `database/schema.sql`
    2. `database/rls_policies.sql`
-   3. `database/sample_data.sql` *(optional seed)*
 3. Copy your **Project URL** and **anon public key** (Settings → API) into `.env`.
 4. Auth → enable **Email** provider. New signups auto-create a `users` profile row via the
    `handle_new_user` trigger; the role is taken from signup metadata (defaults to `patient`).
-
-### Sample data note
-`sample_data.sql` uses fixed UUIDs for demo rows. To log in as those users, create the matching
-accounts in **Auth → Users** and replace the seed `user_id` values with the real auth UIDs,
-**or** just register fresh accounts through the app.
 
 ---
 
@@ -152,9 +144,9 @@ The C++ backend is a local/offline demo and is not part of the frontend deployme
 | Role          | Access |
 |---------------|--------|
 | admin         | everything: doctors, patients, appointments, departments, reports |
-| doctor        | appointments, patient history, prescriptions |
+| doctor        | appointments, patient history |
 | receptionist  | patients, appointments, scheduling, search |
-| patient       | own appointments & prescriptions, booking |
+| patient       | own appointments & booking |
 
 ---
 
@@ -166,7 +158,7 @@ The C++ backend is a local/offline demo and is not part of the frontend deployme
 | UI        | Lucide icons, Recharts, React Hook Form, glassmorphism |
 | Backend   | C++17 (OOP), Supabase Postgres |
 | Auth/DB   | Supabase Auth + Row Level Security |
-| Export    | jsPDF (prescriptions), CSV (records) |
+| Export    | CSV (records) |
 
 ---
 

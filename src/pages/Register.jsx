@@ -6,14 +6,14 @@ import { useAuth } from '../context/AuthContext'
 import { useToast } from '../hooks/useToast'
 import { AuthShell, Field } from './Login'
 
-const ROLES = ['patient', 'doctor', 'receptionist', 'admin']
+const ROLES = ['doctor', 'receptionist', 'admin']
 
 export default function Register() {
   const { signUp, isConfigured } = useAuth()
   const toast = useToast()
   const nav = useNavigate()
   const [busy, setBusy] = useState(false)
-  const { register, handleSubmit, formState: { errors } } = useForm({ defaultValues: { role: 'patient' } })
+  const { register, handleSubmit, formState: { errors } } = useForm({ defaultValues: { role: 'doctor' } })
 
   async function onSubmit(v) {
     if (!isConfigured) { toast.error('Configure Supabase in .env first'); return }
